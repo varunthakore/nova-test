@@ -1,0 +1,18 @@
+[package]
+name = "nova-test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bellpepper-core = { version = "0.4.0", default-features = false }
+bellpepper = { version = "0.4.0", default-features = false }
+ff = "0.13.0"
+nova-snark = "0.32.0"
+rand = "0.8.5"
+rand_core = "0.6.4"
+bincode = "1.3.3"
+clap = "4.1.8"
+flate2 = "1.0.25"
+pasta_curves = "0.5.1"
