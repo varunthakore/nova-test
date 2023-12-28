@@ -96,7 +96,6 @@ fn main() {
         "Number of variables per step (secondary circuit): {}",
         pp.num_variables().1
     );
-    let circuit_primary = MulTwo::new();
     let z0_primary = [<E1 as Engine>::Scalar::one()];
     let z0_secondary = [<E2 as Engine>::Scalar::zero()];
 
@@ -113,7 +112,6 @@ fn main() {
         )
         .unwrap();
     let mut recursive_snark_prove_time = Duration::ZERO;
-    let mut circuit_primary = circuit_primary;
     for i in 0..m {
         let step_start = Instant::now();
         let res = recursive_snark.prove_step(&pp, &circuit_primary, &circuit_secondary);
@@ -126,10 +124,6 @@ fn main() {
             end_step
         );
         recursive_snark_prove_time += end_step;
-
-        if i < m - 1 {
-            circuit_primary = MulTwo::new();
-        }
     }
 
     // verify the recursive SNARK
