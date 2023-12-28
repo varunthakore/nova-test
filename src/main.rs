@@ -63,8 +63,8 @@ fn main() {
 
     type C1 = MulTwo<<E1 as Engine>::Scalar>;
     type C2 = TrivialCircuit<<E2 as Engine>::Scalar>;
-    let circuit_primary = MulTwo::new(); // Defined over scalar field of pallas
-    let circuit_secondary = TrivialCircuit::default(); // Defined over scalar field of vesta
+    let circuit_primary = MulTwo::new();
+    let circuit_secondary = TrivialCircuit::default();
 
     println!("Multiply Two Circuit");
     println!("=========================================================");
